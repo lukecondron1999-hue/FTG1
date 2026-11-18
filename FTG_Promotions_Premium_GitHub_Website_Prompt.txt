@@ -1,0 +1,1086 @@
+GITHUB WEBSITE BUILD PROMPT — FTG PROMOTIONS
+================================================
+
+PROJECT
+-------
+Build a complete, production-ready, premium website for FTG Promotions (boxing promotion).
+
+This is NOT a basic template, school project, or simple landing page. Treat FTG Promotions as a serious, high-end boxing promotion company that needs a website capable of handling major fight-night traffic, ticket sales, fighter promotion, media, press conferences, interviews and future events.
+
+The finished website must look and feel like a premium VIP boxing brand and should be visually impressive enough to compete with — and outshine — major boxing promotion websites.
+
+IMPORTANT:
+- Build the actual working website, not just a mock-up.
+- It must be responsive on desktop, tablet and mobile.
+- It must be fast, accessible and SEO-friendly.
+- Structure the project so it can be deployed immediately.
+- Do not leave major features as fake buttons or unfinished placeholders.
+- Where an external service/API/account is required, create the complete integration structure and clearly isolate the environment variables/configuration needed.
+- Never hard-code secret API keys, payment keys or database credentials.
+- Use environment variables for all secrets.
+- Use a scalable architecture suitable for high traffic.
+
+================================================
+1. BRAND / VISUAL DIRECTION
+================================================
+
+The entire website should feel like:
+
+FTG VIP
+ELITE BOXING
+NIGHT OF FIGHTS
+PREMIUM SPORTS ENTERTAINMENT
+EXCLUSIVE / CINEMATIC / HIGH ENERGY
+
+Visual style:
+- Black / near-black luxury background.
+- Premium metallic gold accents.
+- White typography with strong contrast.
+- Deep, subtle red accents can be used sparingly for danger/energy.
+- Large cinematic fighter photography.
+- High-end boxing-event atmosphere.
+- Sophisticated, not tacky.
+- No generic WordPress/template appearance.
+- No huge blocks of boring text.
+- Use strong visual hierarchy.
+- Use cinematic lighting, glows and depth.
+- Use subtle glass/metal effects where appropriate.
+- Keep the UI professional and premium.
+
+STARLIGHT ROOF / SKY EFFECT:
+Create a distinctive animated background that looks like a dark VIP ceiling/sky filled with tiny stars, particles and subtle light movement.
+
+The background should:
+- Have tiny points of light/stars.
+- Slowly shimmer and move.
+- Have subtle depth/parallax.
+- Feel like looking upward into a premium illuminated arena roof.
+- Never become distracting behind text.
+- Work smoothly on mobile.
+- Respect prefers-reduced-motion.
+- Avoid excessive CPU/GPU usage.
+
+================================================
+2. MOTION / ANIMATION
+================================================
+
+The website should feel ALIVE.
+
+Use premium motion throughout:
+- Elements entering from left and right.
+- Sections revealing as the user scrolls.
+- Horizontal ticker/marquee sections.
+- Fighter cards sliding horizontally.
+- Event information moving subtly left-to-right and right-to-left.
+- Smooth image reveals.
+- Parallax effects.
+- Hover animations.
+- Button micro-interactions.
+- Animated counters where appropriate.
+- Subtle background particle movement.
+- Smooth page transitions.
+- Animated fight-card/event sections.
+- Countdown animation for upcoming events.
+
+IMPORTANT:
+Animation must feel expensive and cinematic, NOT like a cheap website full of random effects.
+
+Performance is critical:
+- Prefer CSS transforms/opacity for animation.
+- Use requestAnimationFrame only when necessary.
+- Lazy-load media.
+- Pause/limit animations when off-screen.
+- Respect reduced-motion settings.
+
+================================================
+3. HOMEPAGE
+================================================
+
+Create an extremely strong homepage.
+
+HERO:
+- Full-screen cinematic hero.
+- FTG Promotions branding.
+- Upcoming event / main fight.
+- Strong headline.
+- Event date and venue.
+- "GET TICKETS" primary CTA.
+- "VIEW FIGHT CARD" secondary CTA.
+- Optional "WATCH LIVE" CTA when a stream is active.
+- Animated background.
+- Premium fighter/event imagery.
+- Countdown to the next event.
+
+The first 5 seconds should immediately communicate:
+"This is a serious professional boxing promotion."
+
+Add:
+- Next Event section.
+- Featured Main Event.
+- Full Fight Card preview.
+- Fighter spotlight.
+- Ticket CTA.
+- Live/Upcoming media section.
+- Press conference/interview preview.
+- Sponsor section.
+- Social media feed/links.
+- Newsletter/signup section.
+- Footer with all important links.
+
+================================================
+4. EVENTS SYSTEM
+================================================
+
+Create a scalable Events section.
+
+Each event should support:
+- Event name
+- Event date
+- Start time
+- Venue
+- Location
+- Event poster
+- Event description
+- Main event
+- Full fight card
+- Ticket link
+- Ticket tiers
+- Countdown
+- Event status:
+  - Upcoming
+  - Live
+  - Completed
+  - Cancelled/Postponed
+
+Create individual event pages.
+
+Example:
+ /events
+ /events/[event-slug]
+
+The architecture must allow FTG to add future events without redesigning the website.
+
+================================================
+5. TICKETS
+================================================
+
+Create a premium Tickets section.
+
+It needs to support:
+- Ticket categories
+- Ticket prices
+- Quantity selection
+- Availability
+- Purchase CTA
+- Secure checkout integration structure
+- Order confirmation
+- Ticket/order reference
+- Mobile-friendly ticket experience
+
+Design it so it can integrate with Stripe or another professional ticket/payment provider.
+
+IMPORTANT:
+Do NOT store card details on the FTG website.
+
+Use secure payment-provider checkout.
+
+Include architecture for:
+- successful payment
+- failed payment
+- cancelled payment
+- webhook confirmation
+- order record
+- ticket quantity updates
+- customer confirmation
+
+Prepare the system for high traffic and simultaneous ticket purchases.
+
+Avoid overselling tickets:
+- Use server-side validation.
+- Use atomic inventory updates/transactions.
+- Never rely only on frontend ticket counts.
+
+================================================
+6. FIGHTER REFERRAL / DISCOUNT CODE SYSTEM
+================================================
+
+THIS IS A CORE FEATURE.
+
+Every fighter must have a unique referral/discount code.
+
+Example:
+
+Fighter:
+John Smith
+
+Code:
+JOHN10
+
+Referral URL:
+ftgpromotions.com/tickets?ref=JOHN10
+
+If a customer purchases using that fighter's code/link:
+- The code is attached to the order.
+- The sale is attributed to that fighter.
+- The system records the referral.
+- The fighter earns 50% of the agreed commission/profit amount according to FTG's configured business rules.
+
+IMPORTANT:
+Do NOT simply calculate this in frontend JavaScript.
+
+Referral attribution and commission calculations must be server-side.
+
+Create a database model for:
+- fighters
+- referral codes
+- referral clicks
+- orders
+- order items
+- referral attribution
+- commission records
+- commission status
+
+Commission statuses:
+- Pending
+- Approved
+- Paid
+- Cancelled/Refunded
+
+Handle:
+- duplicate clicks
+- refreshes
+- direct checkout
+- expired codes
+- refunded orders
+- cancelled orders
+- multiple products/tickets
+- fraud/basic abuse protection
+
+Create a secure admin dashboard where FTG can see:
+
+FIGHTER REFERRAL DASHBOARD
+- Fighter name
+- Referral code
+- Referral link
+- Clicks
+- Orders
+- Tickets sold
+- Revenue generated
+- Commission generated
+- Commission paid
+- Pending commission
+- Conversion rate
+
+The system should make it extremely easy for FTG to give each fighter their unique link.
+
+================================================
+7. FIGHTER PROFILES
+================================================
+
+Create a premium Fighters section.
+
+Each fighter gets an individual profile page.
+
+Example:
+ /fighters
+ /fighters/john-smith
+
+Profile should include:
+- Professional fighter photograph
+- Name
+- Nickname
+- Weight class
+- Record
+- Wins
+- Losses
+- Draws
+- KO/TKO count
+- Nationality/location
+- Team/gym
+- Bio
+- Fight history
+- Upcoming fight
+- Social media links
+- Instagram
+- TikTok
+- Facebook
+- YouTube
+- X if applicable
+- Fighter referral/discount code
+- "BUY TICKETS THROUGH [FIGHTER NAME]" CTA
+
+Make fighter profiles visually spectacular.
+
+Use:
+- Large portrait imagery
+- Animated stats
+- Fighter-card styling
+- Metallic/gold accents
+- Motion
+- Social icons
+- Fight history timeline
+
+================================================
+8. FIGHT CARD
+================================================
+
+Create a visually impressive Fight Card.
+
+Every fight should show:
+- Fighter A
+- Fighter B
+- Photos
+- Weight/class
+- Fight type
+- Scheduled rounds
+- Main/co-main/support status
+- Event
+- Date
+
+Use a premium versus layout.
+
+Example:
+
+FIGHTER A
+VS
+FIGHTER B
+
+Main Event should be visually dominant.
+
+Allow future cards to be added without changing the code structure.
+
+================================================
+9. LIVE STREAMING
+================================================
+
+Create a dedicated Live section.
+
+Routes:
+ /live
+ /watch
+
+The website must support:
+- Live press conferences
+- Fighter interviews
+- Weigh-ins
+- Pre-fight media
+- Fight-night livestreams if FTG chooses to provide them
+
+Build a professional video player area that can integrate with a suitable streaming platform/CDN.
+
+Support:
+- YouTube Live embed
+- Vimeo/live provider if required
+- Mux or another professional streaming service architecture if FTG later upgrades
+
+Features:
+- Live indicator
+- Stream title
+- Event name
+- Viewer information if provider supports it
+- Upcoming stream countdown
+- Previous streams
+- Interviews
+- Press conferences
+- Video archive
+
+IMPORTANT:
+Do not attempt to make the website itself the video streaming infrastructure.
+
+The website should integrate with a scalable external video/streaming CDN.
+
+================================================
+10. PRESS CONFERENCES / MEDIA
+================================================
+
+Create a Media Centre.
+
+Sections:
+- Press Conferences
+- Interviews
+- Weigh-ins
+- Face-offs
+- Highlights
+- Behind the Scenes
+- Fight Night
+- Announcements
+
+Each media item should support:
+- Thumbnail
+- Title
+- Date
+- Event
+- Video
+- Description
+- Category
+
+Create:
+ /media
+ /media/[slug]
+
+Include filters by:
+- Event
+- Fighter
+- Category
+
+================================================
+11. LIVE EVENT MODE
+================================================
+
+Create a special LIVE MODE for fight night.
+
+When an event is live, the site should be able to switch into a live-event experience.
+
+Show:
+- LIVE NOW banner
+- Current event
+- Live stream
+- Fight card
+- Results as they are updated
+- Current fight
+- Previous result
+- Next fight
+- Social links
+- Ticket information if still available
+
+The live page must remain lightweight and stable under high traffic.
+
+================================================
+12. HIGH TRAFFIC / PERFORMANCE
+================================================
+
+This is extremely important.
+
+The website may receive large traffic spikes when:
+- Tickets go on sale.
+- A fight is announced.
+- A press conference begins.
+- A major fighter shares their referral link.
+- Fight night starts.
+- A livestream begins.
+
+Build with scalability in mind.
+
+Use:
+- Server-side validation
+- CDN-friendly assets
+- Image optimisation
+- Lazy loading
+- Caching
+- Static generation/ISR where appropriate
+- Database indexing
+- Efficient API calls
+- Rate limiting
+- Secure authentication
+- Efficient queries
+- Pagination
+- Optimised video embeds
+- No unnecessary client-side requests
+- No huge JavaScript bundles
+
+Do NOT load every fighter/video/order onto one page.
+
+Use pagination/infinite loading where appropriate.
+
+================================================
+13. SECURITY
+================================================
+
+Implement professional security practices.
+
+Include:
+- HTTPS-ready architecture
+- Secure authentication
+- Password hashing
+- Environment variables
+- Input validation
+- Server-side authorization
+- CSRF protection where applicable
+- Rate limiting
+- API validation
+- Secure webhooks
+- Payment webhook signature verification
+- SQL injection protection through ORM/parameterised queries
+- XSS protection
+- Secure HTTP headers
+- Admin route protection
+- No secret keys in frontend code
+
+Never expose:
+- Payment secret keys
+- Database credentials
+- Admin credentials
+- API secrets
+
+================================================
+14. ADMIN DASHBOARD
+================================================
+
+Create an FTG Admin area.
+
+Example:
+ /admin
+
+Secure login required.
+
+Dashboard should allow FTG to manage:
+
+EVENTS
+- Create event
+- Edit event
+- Delete/archive event
+- Event poster
+- Date/time
+- Venue
+- Ticket details
+- Event status
+
+FIGHTERS
+- Add fighter
+- Edit fighter
+- Fighter profile
+- Social media
+- Stats
+- Referral code
+- Referral link
+
+FIGHT CARD
+- Add fight
+- Change fight order
+- Set main event
+- Set co-main
+- Set support fights
+- Update results
+
+TICKETS
+- View sales
+- View ticket quantities
+- View orders
+- View revenue
+- View ticket status
+
+REFERRALS
+- View every fighter's sales
+- View clicks
+- View conversions
+- View commissions
+- Mark commission as paid
+
+MEDIA
+- Add video
+- Add interview
+- Add press conference
+- Add thumbnail
+- Assign event/fighter/category
+
+LIVE STREAM
+- Set stream URL/embed
+- Set live status
+- Set start time
+- Display upcoming/live/offline state
+
+ANNOUNCEMENTS
+- Create homepage announcements
+- Feature major fights
+- Create banners
+
+================================================
+15. ANALYTICS
+================================================
+
+Prepare analytics for:
+- Visitors
+- Page views
+- Ticket conversion
+- Event traffic
+- Fighter referral clicks
+- Fighter referral conversions
+- Ticket sales
+- Revenue
+- Popular fighters
+- Popular events
+- Traffic sources
+- Device types
+
+Integrate cleanly with a professional analytics platform.
+
+Do not collect unnecessary personal data.
+
+================================================
+16. SOCIAL MEDIA
+================================================
+
+Create strong social integration.
+
+Support:
+- Instagram
+- TikTok
+- Facebook
+- YouTube
+- X
+
+Include:
+- Social icons
+- Fighter social links
+- FTG social links
+- Social sharing
+- Open Graph metadata
+- Share images
+- Event sharing
+- Fighter profile sharing
+
+Do not rely on fragile scraping of social platforms.
+
+Use official APIs/embeds where available.
+
+================================================
+17. SEO
+================================================
+
+Implement professional SEO.
+
+Every event and fighter should have:
+- Unique title
+- Meta description
+- Open Graph title
+- Open Graph image
+- Canonical URL
+- Structured data where appropriate
+
+Create:
+- sitemap.xml
+- robots.txt
+- semantic HTML
+- accessible headings
+- clean URLs
+
+Use structured data for:
+- Events
+- Sports events
+- People where appropriate
+- Organisation
+- Videos where appropriate
+
+================================================
+18. MOBILE EXPERIENCE
+================================================
+
+The mobile website must NOT simply be a smaller desktop website.
+
+Design specifically for mobile.
+
+Priorities:
+- Fast loading
+- Easy ticket purchasing
+- Large buttons
+- Easy fighter navigation
+- Swipeable fight cards
+- Mobile-friendly video
+- Sticky ticket CTA where appropriate
+- Easy social sharing
+- Touch-friendly controls
+
+Test at:
+- iPhone sizes
+- Android sizes
+- tablets
+- desktop
+- large monitors
+
+================================================
+19. ACCESSIBILITY
+================================================
+
+Follow modern accessibility standards.
+
+Include:
+- Keyboard navigation
+- Focus states
+- Proper labels
+- Alt text
+- Contrast
+- Reduced motion
+- Screen-reader-friendly structure
+- Accessible buttons
+- Accessible forms
+
+================================================
+20. TECHNOLOGY
+================================================
+
+Choose a modern, production-ready stack.
+
+Preferred:
+
+Frontend:
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS or a similarly maintainable styling system
+
+Backend:
+- Next.js server/API architecture or a separate scalable backend where appropriate
+
+Database:
+- PostgreSQL
+
+ORM:
+- Prisma or another production-grade ORM
+
+Payments:
+- Stripe or another professional payment provider
+
+Hosting:
+- Vercel or equivalent production platform
+
+CDN:
+- Cloudflare/Vercel CDN or equivalent
+
+Images:
+- Optimised image CDN/storage
+
+Streaming:
+- YouTube Live initially, with architecture ready for Mux or another professional streaming platform
+
+Authentication:
+- Secure admin authentication solution
+
+Do not use unnecessary technologies just to make the project look complicated.
+
+================================================
+21. PROJECT STRUCTURE
+================================================
+
+Keep the project clean and professional.
+
+Suggested structure:
+
+/app
+  /page
+  /events
+  /fighters
+  /media
+  /live
+  /tickets
+  /admin
+/components
+/lib
+/server
+/prisma
+/public
+/styles
+/api
+/types
+/config
+
+Use reusable components.
+
+Do not duplicate huge blocks of code.
+
+================================================
+22. DATABASE
+================================================
+
+Design a proper relational database.
+
+Minimum entities:
+
+User
+Admin
+Event
+Fighter
+Fight
+Ticket
+TicketType
+Order
+OrderItem
+ReferralCode
+ReferralClick
+ReferralSale
+Commission
+Media
+Stream
+SocialLink
+Announcement
+
+Add:
+- IDs
+- timestamps
+- status fields
+- indexes
+- relationships
+- unique constraints
+- appropriate cascading behaviour
+
+Index high-traffic queries.
+
+================================================
+23. TICKETING + REFERRAL EXAMPLE
+================================================
+
+Example:
+
+Ticket:
+€50
+
+Fighter:
+JOHN10
+
+Customer clicks:
+FTG website → fighter link → ticket checkout
+
+System records:
+Referral = JOHN10
+Fighter = John Smith
+Order = #FTG12345
+
+After successful payment:
+- Ticket inventory decreases safely.
+- Order is confirmed.
+- Referral sale is recorded.
+- Commission is calculated according to FTG's configured 50% rule.
+- Commission starts as PENDING.
+
+If order is refunded:
+- Commission is reversed/cancelled according to the configured rules.
+
+Admin can see everything.
+
+================================================
+24. PREMIUM UX FEATURES
+================================================
+
+Add tasteful premium details such as:
+
+- Animated "FTG" loading screen
+- Metallic logo treatment
+- Gold animated borders
+- Spotlight effects
+- Cinematic image reveals
+- Fighter card hover effects
+- Horizontal scrolling fight ticker
+- "NEXT FIGHT" indicator
+- Countdown timer
+- Live pulse indicator
+- Animated ticket CTA
+- Smooth page transitions
+- Scroll progress indicator
+- Premium footer
+- Back-to-top button
+- Event status badges
+- Dynamic "LIVE" mode
+- Fighter referral CTA
+
+Do not overdo effects.
+
+The website must remain fast.
+
+================================================
+25. COPY / TONE
+================================================
+
+Use professional boxing language.
+
+The tone should feel:
+- Confident
+- Elite
+- Energetic
+- Professional
+- Exclusive
+- Competitive
+- Cinematic
+
+Avoid generic marketing clichés.
+
+Examples of style:
+
+"THE NEXT GENERATION OF BOXING."
+
+"WHERE WARRIORS MEET."
+
+"ONE NIGHT. ONE RING. NO EXCUSES."
+
+"SECURE YOUR SEAT."
+
+"ENTER THE FTG EXPERIENCE."
+
+Use original copy where appropriate.
+
+================================================
+26. FOOTER
+================================================
+
+Include:
+- FTG Promotions logo/name
+- Navigation
+- Events
+- Fighters
+- Tickets
+- Media
+- Live
+- About
+- Contact
+- Social media
+- Terms
+- Privacy
+- Cookie information
+- Copyright
+
+================================================
+27. LEGAL / PRIVACY
+================================================
+
+Prepare pages for:
+- Privacy Policy
+- Terms & Conditions
+- Ticket Terms
+- Refund Policy
+- Cookie Policy
+- Contact
+
+Do not invent legal claims or guarantees.
+
+Make these pages easy for FTG to edit before launch.
+
+================================================
+28. ERROR STATES
+================================================
+
+Create polished pages/components for:
+
+404
+500
+Payment failed
+Payment cancelled
+Event unavailable
+Tickets sold out
+Stream offline
+Stream starting soon
+No fighters found
+No media found
+
+Never show a raw technical error to a customer.
+
+================================================
+29. LOADING STATES
+================================================
+
+Create premium skeleton/loading states.
+
+The site should never look broken while data is loading.
+
+================================================
+30. FINAL QUALITY BAR
+================================================
+
+Before considering the project complete, check:
+
+[ ] Homepage looks premium
+[ ] Mobile looks premium
+[ ] Desktop looks premium
+[ ] Starlight background works
+[ ] Animations work smoothly
+[ ] Left/right motion effects work
+[ ] Events system works
+[ ] Fighter profiles work
+[ ] Fight card works
+[ ] Ticket architecture works
+[ ] Referral code system works
+[ ] Referral attribution is server-side
+[ ] 50% commission rule is configurable and properly recorded
+[ ] Admin dashboard works
+[ ] Media section works
+[ ] Live streaming section works
+[ ] High-traffic architecture is considered
+[ ] Payment security is considered
+[ ] Database is properly structured
+[ ] SEO is implemented
+[ ] Social links work
+[ ] Accessibility is implemented
+[ ] Error states exist
+[ ] Loading states exist
+[ ] Environment variables are documented
+[ ] No secrets are committed
+[ ] No fake unfinished buttons remain
+[ ] No unnecessary placeholder content remains
+[ ] Build passes
+[ ] Lint/type checks pass
+[ ] Production deployment instructions are included
+
+================================================
+31. GITHUB DELIVERY REQUIREMENT
+================================================
+
+Create the project as a complete GitHub-ready repository.
+
+Include:
+
+README.md
+
+The README must explain:
+
+1. What the project is.
+2. Technology stack.
+3. How to install.
+4. How to run locally.
+5. Required environment variables.
+6. How to configure the database.
+7. How to run migrations.
+8. How to create the admin account.
+9. How to configure Stripe/payment provider.
+10. How to configure streaming.
+11. How to configure image storage.
+12. How to configure analytics.
+13. How to deploy.
+14. How to add fighters.
+15. How to create referral codes.
+16. How to create events.
+17. How to manage ticket inventory.
+18. How to manage commissions.
+19. How to put the site into LIVE mode.
+
+Create an .env.example file.
+
+Never put real secret keys in the repository.
+
+================================================
+32. CRITICAL INSTRUCTION
+================================================
+
+Do not build a basic website and then stop.
+
+Build the complete foundation for a professional FTG Promotions digital platform.
+
+The website should be designed as if FTG is about to become a major boxing promotion and expects:
+- large ticket-sale spikes
+- thousands of simultaneous visitors
+- fighters promoting their own referral links
+- live media events
+- live streaming
+- repeated future fight cards
+- large video/media libraries
+
+The final result should feel like a genuine premium boxing promotion platform.
+
+The most important priorities are:
+
+1. PREMIUM VIP DESIGN
+2. EXTREME VISUAL IMPACT
+3. FAST PERFORMANCE
+4. HIGH-TRAFFIC READINESS
+5. SECURE TICKETING
+6. FIGHTER REFERRAL / 50% COMMISSION SYSTEM
+7. LIVE STREAMING
+8. FIGHTER PROFILES
+9. EVENT MANAGEMENT
+10. ADMIN CONTROL
+11. MOBILE EXPERIENCE
+12. FUTURE SCALABILITY
+
+Do not sacrifice performance for visual effects.
+
+Do not sacrifice security for convenience.
+
+Do not sacrifice usability for animation.
+
+Make FTG Promotions look like the future of boxing promotion.
